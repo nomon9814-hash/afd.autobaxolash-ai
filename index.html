@@ -1,159 +1,258 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="uz">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>AI AUTO — Avtomobil bozor narxini AI orqali aniqlash</title>
+<title>AI AUTO — O‘zbekistonda avtomobil narxini aniqlash</title>
 
-<meta name="description" content="AI AUTO — O'zbekistonda avtomobillarning real bozor narxini AI va bozor ma'lumotlari asosida baholash platformasi.">
-<meta name="keywords" content="avto narx, avtomobil narxi, Cobalt narxi, Tracker narxi, Malibu narxi, mashina narxi, AI Auto">
+<meta name="description" content="AI AUTO — O‘zbekiston avtomobil bozorida mashina narxini baholash platformasi. Chevrolet, BYD, Kia, Hyundai, Toyota, Mercedes-Benz va boshqa avtomobillarni baholang.">
+
+<meta name="keywords" content="avto narx, mashina narxi, avtomobil narxi, O'zbekiston avto narxlari, Cobalt narxi, Tracker narxi, Malibu narxi, Onix narxi, BYD narxi, Kia narxi, avtomobil baholash, AI AUTO">
+
 <meta name="robots" content="index, follow">
 
+<meta property="og:title" content="AI AUTO — Avtomobil narxini AI orqali baholash">
+<meta property="og:description" content="O‘zbekiston avtomobil bozorida avtomobilingizning taxminiy bozor qiymatini aniqlang.">
+<meta property="og:type" content="website">
+
 <style>
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    background: #f4f7fb;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f7fb;
     color: #172033;
 }
 
+/* HEADER */
+
 header {
-    background: #0b1220;
+    background: #07111f;
     color: white;
-    padding: 18px 6%;
+    padding: 16px 6%;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
 .logo {
     font-size: 25px;
-    font-weight: bold;
+    font-weight: 800;
+    letter-spacing: .5px;
 }
 
 .logo span {
-    color: #18c77a;
+    color: #16d47b;
 }
 
 nav a {
     color: white;
     text-decoration: none;
     margin-left: 25px;
+    font-size: 14px;
 }
 
+/* HERO */
+
 .hero {
-    background: linear-gradient(135deg,#0b1220,#182b4a);
+    min-height: 650px;
+    padding: 80px 6%;
     color: white;
-    padding: 70px 6% 90px;
     text-align: center;
+
+    background:
+    linear-gradient(
+        rgba(5,15,30,.78),
+        rgba(5,15,30,.92)
+    ),
+    url("https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1800&q=85");
+
+    background-size: cover;
+    background-position: center;
+}
+
+.badge {
+    display: inline-block;
+    padding: 8px 15px;
+    background: rgba(22,212,123,.15);
+    border: 1px solid rgba(22,212,123,.5);
+    border-radius: 30px;
+    color: #42e99a;
+    font-weight: bold;
+    margin-bottom: 20px;
 }
 
 .hero h1 {
-    font-size: 42px;
-    margin-bottom: 15px;
-}
-
-.hero p {
-    font-size: 18px;
-    color: #cbd5e1;
-    margin-bottom: 35px;
-}
-
-.box {
+    font-size: 45px;
     max-width: 850px;
+    margin: auto;
+    line-height: 1.15;
+}
+
+.hero h1 span {
+    color: #19dc7f;
+}
+
+.hero-subtitle {
+    max-width: 700px;
+    margin: 20px auto 35px;
+    color: #d6deea;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/* PRICE BOX */
+
+.price-box {
+    max-width: 900px;
     margin: auto;
     background: white;
     color: #172033;
     padding: 30px;
-    border-radius: 18px;
-    box-shadow: 0 15px 50px rgba(0,0,0,.25);
-}
-
-.form {
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
-    gap: 15px;
+    border-radius: 22px;
+    box-shadow: 0 20px 70px rgba(0,0,0,.35);
     text-align: left;
 }
 
-label {
+.price-box h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 25px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 16px;
+}
+
+.field label {
+    display: block;
+    margin-bottom: 7px;
     font-weight: bold;
     font-size: 14px;
-    margin-bottom: 6px;
-    display: block;
 }
 
-input, select {
+input,
+select {
     width: 100%;
     padding: 14px;
-    border: 1px solid #d7deea;
+    border: 1px solid #d8dfeb;
     border-radius: 10px;
     font-size: 15px;
+    outline: none;
+    background: white;
 }
 
-button {
+input:focus,
+select:focus {
+    border-color: #16c978;
+}
+
+.main-button {
     width: 100%;
-    margin-top: 20px;
-    padding: 16px;
+    padding: 17px;
+    margin-top: 22px;
+    background: #12c975;
     border: none;
-    border-radius: 10px;
-    background: #18c77a;
     color: white;
+    border-radius: 11px;
     font-size: 17px;
     font-weight: bold;
     cursor: pointer;
 }
 
-button:hover {
-    background: #0fa866;
+.main-button:hover {
+    background: #0eac63;
 }
+
+/* RESULT */
 
 .result {
     display: none;
     margin-top: 25px;
-    background: #eefbf5;
-    border: 1px solid #b9efd5;
     padding: 25px;
+    background: #edfff6;
+    border: 1px solid #b8efd4;
     border-radius: 15px;
     text-align: center;
 }
 
-.price {
-    font-size: 34px;
-    font-weight: bold;
-    color: #079455;
-    margin: 12px 0;
+.result-title {
+    font-size: 16px;
+    color: #526174;
 }
 
-.cards {
-    padding: 60px 6%;
-    max-width: 1200px;
+.price {
+    font-size: 35px;
+    color: #079957;
+    font-weight: 800;
+    margin: 10px 0;
+}
+
+.range {
+    font-size: 15px;
+    color: #475569;
+}
+
+.warning {
+    margin-top: 15px;
+    font-size: 12px;
+    color: #64748b;
+}
+
+/* SECTION */
+
+.section {
+    padding: 70px 6%;
+    max-width: 1250px;
     margin: auto;
 }
-
-.cards h2 {
+[05.08.2026 10:40] Abdugafforov.N: .section-title {
     text-align: center;
-    margin-bottom: 35px;
-    font-size: 30px;
+    font-size: 32px;
+    margin-bottom: 15px;
 }
 
-.grid {
+.section-description {
+    text-align: center;
+    max-width: 750px;
+    margin: auto auto 40px;
+    color: #64748b;
+    line-height: 1.7;
+}
+
+/* CARDS */
+
+.cards {
     display: grid;
     grid-template-columns: repeat(3,1fr);
-    gap: 20px;
+    gap: 22px;
 }
 
 .card {
     background: white;
-    padding: 25px;
-    border-radius: 15px;
-    box-shadow: 0 5px 25px rgba(0,0,0,.07);
+    border-radius: 18px;
+    padding: 28px;
+    box-shadow: 0 7px 30px rgba(0,0,0,.07);
+}
+
+.card-icon {
+    font-size: 32px;
+    margin-bottom: 15px;
 }
 
 .card h3 {
@@ -165,81 +264,195 @@ button:hover {
     line-height: 1.6;
 }
 
-footer {
-    background: #0b1220;
-    color: #9ca9bc;
-    padding: 30px;
-    text-align: center;
+/* BRANDS */
+
+.brands {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
-@media(max-width:700px) {
-    .hero h1 {
-        font-size: 30px;
-    }
+.brand {
+    background: white;
+    border: 1px solid #e1e6ef;
+    padding: 12px 18px;
+    border-radius: 30px;
+    font-weight: bold;
+}
 
-    .form,
-    .grid {
-        grid-template-columns: 1fr;
-    }
+/* FAQ */
+
+.faq {
+    max-width: 850px;
+    margin: auto;
+}
+
+.faq-item {
+    background: white;
+    padding: 22px;
+    margin-bottom: 12px;
+    border-radius: 12px;
+    box-shadow: 0 4px 18px rgba(0,0,0,.05);
+}
+
+.faq-item h3 {
+    font-size: 17px;
+    margin-bottom: 8px;
+}
+
+.faq-item p {
+    color: #64748b;
+    line-height: 1.6;
+}
+
+/* FOOTER */
+
+footer {
+    background: #07111f;
+    color: #aab5c5;
+    text-align: center;
+    padding: 35px 20px;
+    line-height: 1.8;
+}
+
+footer strong {
+    color: white;
+}
+
+/* MOBILE */
+
+@media(max-width:750px) {
 
     nav {
         display: none;
     }
+
+    .hero {
+        padding: 55px 4%;
+    }
+
+    .hero h1 {
+        font-size: 31px;
+    }
+
+    .hero-subtitle {
+        font-size: 16px;
+    }
+
+    .price-box {
+        padding: 20px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .section-title {
+        font-size: 27px;
+    }
 }
+
 </style>
 </head>
 
 <body>
 
 <header>
-    <div class="logo">AI <span>AUTO</span></div>
+
+    <div class="logo">
+        AI <span>AUTO</span>
+    </div>
 
     <nav>
-        <a href="#baholash">Baholash</a>
-        <a href="#xizmatlar">Xizmatlar</a>
+        <a href="#baholash">Avtomobil baholash</a>
+        <a href="#imkoniyatlar">Imkoniyatlar</a>
+        <a href="#savollar">Savol-javob</a>
     </nav>
+
 </header>
+
 
 <section class="hero">
 
-    <h1>Avtomobilingiz narxini AI bilan aniqlang</h1>
+    <div class="badge">
+        🤖 AI AUTO — Avtomobil baholash
+    </div>
 
-    <p>
-        O‘zbekiston avtomobil bozoridagi narxlarni tahlil qilish
-        uchun zamonaviy AI AUTO platformasi
+    <h1>
+        Avtomobilingizning
+        <span>bozor narxini</span>
+        aniqlang
+    </h1>
+
+    <p class="hero-subtitle">
+        O‘zbekiston avtomobil bozori uchun yaratilgan
+        zamonaviy avtomobil baholash platformasi.
+        Mashinangiz ma'lumotlarini kiriting va taxminiy
+        bozor qiymatini bilib oling.
     </p>
 
-    <div class="box" id="baholash">
 
-        <div class="form">
+    <div class="price-box" id="baholash">
 
-            <div>
-                <label>Marka</label>
+        <h2>🚗 Avtomobilni baholash</h2>
+
+        <div class="form-grid">
+
+            <div class="field">
+
+                <label>Avtomobil markasi</label>
 
                 <select id="brand">
-                    <option>Chevrolet</option>
-                    <option>Mercedes-Benz</option>
-                    <option>Toyota</option>
-                    <option>Kia</option>
-                    <option>Hyundai</option>
+
+                    <option value="chevrolet">Chevrolet</option>
+                    <option value="byd">BYD</option>
+                    <option value="kia">Kia</option>
+                    <option value="hyundai">Hyundai</option>
+                    <option value="toyota">Toyota</option>
+                    <option value="mercedes">Mercedes-Benz</option>
+                    <option value="bmw">BMW</option>
+                    <option value="chery">Chery</option>
+                    <option value="haval">Haval</option>
+                    <option value="geely">Geely</option>
+                    <option value="changan">Changan</option>
+                    <option value="volkswagen">Volkswagen</option>
+                    <option value="lexus">Lexus</option>
+                    <option value="jetour">Jetour</option>
+                    <option value="jac">JAC</option>
+
                 </select>
+
             </div>
 
-            <div>
+
+            <div class="field">
+
                 <label>Model</label>
-<select id="model">
-                    <option>Cobalt</option>
-                    <option>Tracker</option>
-                    <option>Malibu</option>
-                    <option>Onix</option>
-                    <option>Damas</option>
+
+                <select id="model">
+ <option value="cobalt">Cobalt</option>
+                    <option value="tracker">Tracker</option>
+                    <option value="malibu">Malibu</option>
+                    <option value="onix">Onix</option>
+                    <option value="damas">Damas</option>
+                    <option value="labo">Labo</option>
+
                 </select>
+
             </div>
 
-            <div>
+
+            <div class="field">
+
                 <label>Ishlab chiqarilgan yil</label>
 
                 <select id="year">
+
                     <option>2026</option>
                     <option>2025</option>
                     <option>2024</option>
@@ -247,35 +460,59 @@ footer {
                     <option>2022</option>
                     <option>2021</option>
                     <option>2020</option>
+                    <option>2019</option>
+                    <option>2018</option>
+                    <option>2017</option>
+                    <option>2016</option>
+                    <option>2015</option>
+
                 </select>
+
             </div>
 
-            <div>
+
+            <div class="field">
+
                 <label>Probeg (km)</label>
 
-                <input id="mileage" type="number" placeholder="35000">
+                <input
+                    id="mileage"
+                    type="number"
+                    placeholder="Masalan: 65000"
+                >
+
             </div>
 
-            <div>
+
+            <div class="field">
+
                 <label>Korobka</label>
 
                 <select id="gear">
+
                     <option>Avtomat</option>
                     <option>Mexanika</option>
+                    <option>Robot</option>
+                    <option>Variator</option>
+
                 </select>
+
             </div>
 
-            <div>
+
+            <div class="field">
+
                 <label>Hudud</label>
 
                 <select id="region">
+
                     <option>Toshkent shahri</option>
                     <option>Toshkent viloyati</option>
                     <option>Samarqand</option>
                     <option>Andijon</option>
                     <option>Farg‘ona</option>
-                    <option>Buxoro</option>
                     <option>Namangan</option>
+                    <option>Buxoro</option>
                     <option>Qashqadaryo</option>
                     <option>Surxondaryo</option>
                     <option>Xorazm</option>
@@ -283,32 +520,36 @@ footer {
                     <option>Jizzax</option>
                     <option>Sirdaryo</option>
                     <option>Qoraqalpog‘iston</option>
+
                 </select>
+
             </div>
 
         </div>
 
-        <button onclick="calculatePrice()">
-            🚗 NARXNI ANIQLASH
+
+        <button class="main-button" onclick="calculatePrice()">
+            🔍 AVTOMOBIL NARXINI ANIQLASH
         </button>
+
 
         <div class="result" id="result">
 
-            <h3>Taxminiy bozor bahosi</h3>
+            <div class="result-title">
+                AI AUTO taxminiy bozor bahosi
+            </div>
 
             <div class="price" id="price">
                 0 so‘m
             </div>
 
-            <p id="details"></p>
+            <div class="range" id="range"></div>
 
-            <br>
-
-            <small>
-                ⚠️ Bu hozircha demo hisob-kitob.
-                Real bozor ma'lumotlari ulangandan keyin narx
-                avtomatik ravishda yangilanadi.
-            </small>
+            <div class="warning">
+                ⚠️ Hozirgi natija demo algoritm asosida.
+                Real bozor ma'lumotlari integratsiya qilingandan
+                keyin baholash aniqligi oshiriladi.
+            </div>
 
         </div>
 
@@ -316,84 +557,270 @@ footer {
 
 </section>
 
-<section class="cards" id="xizmatlar">
 
-    <h2>AI AUTO imkoniyatlari</h2>
+<section class="section" id="imkoniyatlar">
 
-    <div class="grid">
+    <h2 class="section-title">
+        AI AUTO qanday ishlaydi?
+    </h2>
+
+    <p class="section-description">
+        Avtomobilning asosiy parametrlarini tahlil qilib,
+        uning O‘zbekiston bozoridagi taxminiy qiymatini
+        aniqlashga yordam beradi.
+    </p>
+
+
+    <div class="cards">
 
         <div class="card">
-            <h3>💰 Real bozor bahosi</h3>
+
+            <div class="card-icon">📊</div>
+
+            <h3>Bozor tahlili</h3>
+
             <p>
-                Avtomobilning modeli, yili, probegi va boshqa
-                parametrlarini hisobga olib bozor qiymatini aniqlash.
+                Avtomobil modeli, ishlab chiqarilgan yili,
+                probegi va boshqa ko‘rsatkichlarni hisobga olish.
             </p>
+
         </div>
 
-        <div class="card">
-            <h3>📊 Narx statistikasi</h3>
-            <p>
-                Avtomobillar narxining vaqt bo‘yicha o‘zgarishini
-                kuzatish va tahlil qilish.
-            </p>
-        </div>
 
         <div class="card">
-            <h3>🤖 AI tahlil</h3>
+
+            <div class="card-icon">🤖</div>
+
+            <h3>AI baholash</h3>
+
             <p>
-                Avtomobilni sotish yoki sotib olishda narxni
-                baholashga yordam beradigan AI tizimi.
+                Keyingi versiyalarda real bozor ma'lumotlari
+                asosida avtomatik narx tahlili amalga oshiriladi.
             </p>
+
+        </div>
+ <div class="card">
+
+            <div class="card-icon">📍</div>
+
+            <h3>Hudud bo‘yicha tahlil</h3>
+
+            <p>
+                Toshkent va O‘zbekiston viloyatlari bo‘yicha
+                bozor farqlarini hisobga olish imkoniyati.
+            </p>
+
         </div>
 
     </div>
 
 </section>
+
+
+<section class="section">
+
+    <h2 class="section-title">
+        O‘zbekistondagi avtomobil markalari
+    </h2>
+
+    <p class="section-description">
+        AI AUTO platformasida O‘zbekiston bozoridagi
+        mashhur avtomobil markalari bilan ishlash rejalashtirilgan.
+    </p>
+
+
+    <div class="brands">
+
+        <div class="brand">Chevrolet</div>
+        <div class="brand">BYD</div>
+        <div class="brand">Kia</div>
+        <div class="brand">Hyundai</div>
+        <div class="brand">Toyota</div>
+        <div class="brand">Mercedes-Benz</div>
+        <div class="brand">BMW</div>
+        <div class="brand">Chery</div>
+        <div class="brand">Haval</div>
+        <div class="brand">Geely</div>
+        <div class="brand">Changan</div>
+        <div class="brand">Volkswagen</div>
+        <div class="brand">Lexus</div>
+        <div class="brand">Jetour</div>
+        <div class="brand">JAC</div>
+
+    </div>
+
+</section>
+
+
+<section class="section" id="savollar">
+
+    <h2 class="section-title">
+        Ko‘p beriladigan savollar
+    </h2>
+
+
+    <div class="faq">
+
+        <div class="faq-item">
+
+            <h3>
+                AI AUTO avtomobil narxini qanday aniqlaydi?
+            </h3>
+
+            <p>
+                Platforma avtomobil modeli, yili, probegi,
+                transmissiyasi va hudud kabi parametrlarni
+                tahlil qiladi.
+            </p>
+
+        </div>
+
+
+        <div class="faq-item">
+
+            <h3>
+                Qaysi avtomobillarni baholash mumkin?
+            </h3>
+
+            <p>
+                Chevrolet, BYD, Kia, Hyundai, Toyota,
+                Mercedes-Benz, BMW, Chery, Haval va boshqa
+                avtomobil markalarini qo‘shish mumkin.
+            </p>
+
+        </div>
+
+
+        <div class="faq-item">
+
+            <h3>
+                AI AUTO chiqargan narx aniqmi?
+            </h3>
+
+            <p>
+                Yakuniy baholash real bozor ma’lumotlarining
+                sifati va yangiligiga bog‘liq. Platforma
+                bozor ma’lumotlari bilan integratsiya qilingach,
+                narxlar yanada aniqroq hisoblanadi.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
 
 <footer>
-    © 2026 AI AUTO — O‘zbekiston avtomobil bozorini AI orqali baholash platformasi
+
+    <strong>AI AUTO</strong> — O‘zbekiston avtomobil bozorini
+    baholash platformasi.
+
+    <br>
+
+    © 2026 AI AUTO. Barcha huquqlar himoyalangan.
+
 </footer>
+
 
 <script>
 
 function calculatePrice() {
 
-    const model = document.getElementById("model").value;
-    const year = Number(document.getElementById("year").value);
-    const mileage = Number(document.getElementById("mileage").value) || 0;
+    const brand =
+        document.getElementById("brand").value;
+
+    const model =
+        document.getElementById("model").value;
+
+    const year =
+        Number(document.getElementById("year").value);
+
+    const mileage =
+        Number(document.getElementById("mileage").value) || 0;
+
+
+    /*
+       DEMO NARXLAR
+
+       Keyingi bosqichda bu qismni real
+       O‘zbekiston avtomobil bozori ma'lumotlari
+       bilan almashtiramiz.
+    */
 
     let basePrice = 150000000;
 
-    if(model === "Tracker") basePrice = 250000000;
-    if(model === "Malibu") basePrice = 300000000;
-    if(model === "Onix") basePrice = 180000000;
-    if(model === "Damas") basePrice = 120000000;
 
-    const age = 2026 - year;
+    if (model === "cobalt")
+        basePrice = 145000000;
 
-    basePrice -= age * 7000000;
-if(mileage > 100000) {
+    if (model === "tracker")
+        basePrice = 220000000;
+
+    if (model === "malibu")
+        basePrice = 300000000;
+
+    if (model === "onix")
+        basePrice = 165000000;
+
+    if (model === "damas")
+        basePrice = 110000000;
+
+    if (model === "labo")
+        basePrice = 105000000;
+
+
+    const currentYear = 2026;
+
+    const age = currentYear - year;
+
+
+    basePrice -= age * 6000000;
+
+
+    if (mileage > 150000) {
+
+        basePrice -= 20000000;
+
+    } else if (mileage > 100000) {
+
         basePrice -= 15000000;
-    } else if(mileage > 50000) {
+
+    } else if (mileage > 50000) {
+
         basePrice -= 8000000;
-    } else if(mileage > 30000) {
+
+    } else if (mileage > 30000) {
+
         basePrice -= 4000000;
+
     }
 
-    const minPrice = basePrice - 4000000;
-    const maxPrice = basePrice + 4000000;
 
-    document.getElementById("price").innerText =
+    if (basePrice < 30000000)
+        basePrice = 30000000;
+
+
+    const minPrice =
+        Math.round(basePrice * 0.95);
+
+    const maxPrice =
+        Math.round(basePrice * 1.05);
+document.getElementById("price").innerText =
         basePrice.toLocaleString("uz-UZ") + " so‘m";
 
-    document.getElementById("details").innerText =
-        "Taxminiy diapazon: " +
+
+    document.getElementById("range").innerText =
+        "Bozor diapazoni: " +
         minPrice.toLocaleString("uz-UZ") +
         " – " +
         maxPrice.toLocaleString("uz-UZ") +
         " so‘m";
 
-    document.getElementById("result").style.display = "block";
+
+    document.getElementById("result").style.display =
+        "block";
+
 }
 
 </script>
