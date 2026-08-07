@@ -1,289 +1,277 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="uz">
 <head>
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>AI AUTO — O‘zbekistonda avtomobil narxini baholash</title>
+<title>AFD AutoBaholash AI — O‘zbekistonda avtomobil narxini baholash</title>
 
-<meta name="description" content="AI AUTO — O‘zbekiston avtomobil bozoridagi mashinalar narxini baholash platformasi. Chevrolet, BYD, Kia, Hyundai, Toyota, Mercedes-Benz, BMW va boshqa avtomobillarni 2000–2026 yillar bo‘yicha baholang.">
+<meta name="description" content="AFD AutoBaholash AI — O‘zbekiston avtomobil bozorida Chevrolet, BYD, Kia, Hyundai, Toyota, Mercedes-Benz, BMW, Chery, Haval va boshqa avtomobillar narxini 2000–2026 yil bo‘yicha baholash platformasi.">
 
-<meta name="keywords" content="avtomobil narxi, mashina narxi, avto narx, O'zbekistonda mashina narxlari, avtomobil baholash, Cobalt narxi, Nexia narxi, Damas narxi, BYD narxi, Chazor narxi, Song Plus narxi, Kia Seltos narxi, Toyota narxi">
+<meta name="keywords" content="avto narx, avtomobil narxi, mashina narxi, O'zbekiston mashina narxlari, Cobalt narxi, Nexia narxi, Damas narxi, BYD Chazor narxi, BYD Song Plus, Kia Seltos, Hyundai, Toyota, Mercedes, BMW">
 
 <meta name="robots" content="index, follow">
 
-<meta property="og:title" content="AI AUTO — Avtomobil narxini baholash">
-
-<meta property="og:description" content="O‘zbekistondagi avtomobillar bozor narxini baholash platformasi.">
-
+<meta property="og:title" content="AFD AutoBaholash AI">
+<meta property="og:description" content="O‘zbekistonda avtomobil bozor narxini AI yordamida taxminiy baholash platformasi.">
 <meta property="og:type" content="website">
 
 <style>
-
 *{
-box-sizing:border-box;
-margin:0;
-padding:0;
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
 }
 
 body{
-font-family:Arial,Helvetica,sans-serif;
-background:#f4f7fb;
-color:#172033;
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f3f6fa;
+    color:#172033;
 }
 
 header{
-background:#071321;
-color:white;
-padding:16px 6%;
-display:flex;
-align-items:center;
-justify-content:space-between;
-position:sticky;
-top:0;
-z-index:100;
+    background:#071321;
+    color:white;
+    padding:18px 6%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
 }
 
 .logo{
-font-size:27px;
-font-weight:900;
+    font-size:26px;
+    font-weight:900;
 }
 
 .logo span{
-color:#16d77b;
+    color:#19d77b;
 }
 
 nav a{
-color:white;
-text-decoration:none;
-margin-left:22px;
-font-size:14px;
+    color:white;
+    text-decoration:none;
+    margin-left:20px;
 }
 
 .hero{
-min-height:650px;
-padding:55px 5%;
-background:
-linear-gradient(rgba(2,13,27,.84),rgba(2,13,27,.94)),
-url("https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1800&q=85");
-background-size:cover;
-background-position:center;
-color:white;
-text-align:center;
+    min-height:700px;
+    padding:55px 5%;
+    color:white;
+    text-align:center;
+    background:
+    linear-gradient(rgba(2,13,27,.88),rgba(2,13,27,.95)),
+    url("https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1800&q=85");
+    background-size:cover;
+    background-position:center;
 }
 
 .badge{
-display:inline-block;
-padding:8px 17px;
-border-radius:30px;
-background:rgba(22,215,123,.13);
-border:1px solid rgba(22,215,123,.5);
-color:#35e996;
-font-weight:bold;
-margin-bottom:18px;
+    display:inline-block;
+    padding:8px 18px;
+    border-radius:30px;
+    border:1px solid #19d77b;
+    color:#19d77b;
+    margin-bottom:18px;
+    font-weight:bold;
 }
 
 .hero h1{
-font-size:44px;
-line-height:1.15;
-max-width:900px;
-margin:auto;
+    font-size:44px;
+    max-width:950px;
+    margin:auto;
 }
 
 .hero h1 span{
-color:#18d77b;
+    color:#19d77b;
 }
 
 .hero p{
-max-width:760px;
-margin:18px auto 30px;
-line-height:1.6;
-color:#d7e0eb;
+    max-width:800px;
+    margin:20px auto 30px;
+    line-height:1.6;
+    color:#dce5ef;
 }
 
 .calculator{
-max-width:1000px;
-margin:auto;
-background:white;
-color:#172033;
-border-radius:22px;
-padding:30px;
-box-shadow:0 20px 70px rgba(0,0,0,.4);
-text-align:left;
+    max-width:1050px;
+    margin:auto;
+    padding:30px;
+    background:white;
+    color:#172033;
+    border-radius:22px;
+    box-shadow:0 20px 70px rgba(0,0,0,.45);
+    text-align:left;
 }
 
 .calculator h2{
-text-align:center;
-margin-bottom:25px;
+    text-align:center;
+    margin-bottom:25px;
 }
 
 .grid{
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:16px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:18px;
 }
 
 .field label{
-display:block;
-font-size:14px;
-font-weight:bold;
-margin-bottom:7px;
+    display:block;
+    font-weight:bold;
+    margin-bottom:7px;
 }
 
 select,
 input{
-width:100%;
-padding:14px;
-border:1px solid #d8dfeb;
-border-radius:10px;
-font-size:15px;
-background:white;
+    width:100%;
+    padding:15px;
+    border:1px solid #d5dce5;
+    border-radius:10px;
+    background:white;
+    font-size:16px;
 }
 
 .main-button{
-width:100%;
-padding:16px;
-margin-top:20px;
-border:0;
-border-radius:10px;
-background:#12c976;
-color:white;
-font-size:17px;
-font-weight:bold;
-cursor:pointer;
+    width:100%;
+    margin-top:22px;
+    padding:17px;
+    border:0;
+    border-radius:11px;
+    background:#12c976;
+    color:white;
+    font-size:17px;
+    font-weight:bold;
+    cursor:pointer;
 }
 
 .main-button:hover{
-background:#0eaa63;
+    background:#0ca963;
 }
 
 .result{
-display:none;
-margin-top:20px;
-padding:22px;
-border-radius:15px;
-background:#edfff6;
-border:1px solid #b7efd4;
-text-align:center;
+    display:none;
+    margin-top:20px;
+    padding:25px;
+    background:#edfff6;
+    border:1px solid #b8efd5;
+    border-radius:15px;
+    text-align:center;
 }
 
 .result-title{
-font-size:14px;
-color:#64748b;
+    color:#64748b;
 }
 
 .price{
-font-size:34px;
-font-weight:900;
-color:#079958;
-margin:8px 0;
+    margin:10px 0;
+    color:#079958;
+    font-size:35px;
+    font-weight:900;
 }
 
 .range{
-color:#334155;
+    color:#334155;
+    font-size:16px;
 }
 
-.warning{
-margin-top:12px;
-font-size:12px;
-color:#64748b;
+.note{
+    margin-top:12px;
+    font-size:12px;
+    color:#64748b;
 }
 
 .section{
-max-width:1200px;
-margin:auto;
-padding:65px 5%;
+    max-width:1200px;
+    margin:auto;
+    padding:65px 5%;
 }
 
 .section h2{
-font-size:31px;
-text-align:center;
-margin-bottom:14px;
+    text-align:center;
+    font-size:31px;
+    margin-bottom:15px;
 }
 
 .section-desc{
-text-align:center;
-max-width:800px;
-margin:0 auto 35px;
-color:#64748b;
-line-height:1.6;
+    max-width:800px;
+    margin:0 auto 35px;
+    text-align:center;
+    color:#64748b;
+    line-height:1.6;
 }
 
 .cards{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:20px;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
 }
 
 .card{
-background:white;
-padding:25px;
-border-radius:18px;
-box-shadow:0 6px 25px rgba(0,0,0,.06);
+    padding:25px;
+    background:white;
+    border-radius:18px;
+    box-shadow:0 6px 25px rgba(0,0,0,.06);
 }
 
 .card h3{
-margin-bottom:10px;
+    margin-bottom:10px;
 }
 
 .card p{
-color:#64748b;
-line-height:1.6;
+    color:#64748b;
+    line-height:1.6;
 }
 
 .brands{
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
-gap:10px;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:10px;
 }
-
 .brand{
-background:white;
-padding:11px 17px;
-border-radius:25px;
-border:1px solid #dce3ec;
-font-weight:bold;
+    background:white;
+    border:1px solid #dce3ec;
+    padding:11px 17px;
+    border-radius:25px;
+    font-weight:bold;
 }
 
 footer{
-background:#071321;
-color:#aeb9c8;
-padding:35px 20px;
-text-align:center;
-line-height:1.8;
+    background:#071321;
+    color:#aeb9c8;
+    padding:35px 20px;
+    text-align:center;
+    line-height:1.8;
 }
 
 footer strong{
-color:white;
+    color:white;
 }
 
 @media(max-width:700px){
 
-nav{
-display:none;
-}
+    nav{
+        display:none;
+    }
 
-.hero{
-padding:45px 4%;
-}
+    .hero{
+        padding:40px 4%;
+    }
 
-.hero h1{
-font-size:31px;
-}
-.grid{
-grid-template-columns:1fr;
-}
+    .hero h1{
+        font-size:30px;
+    }
 
-.cards{
-grid-template-columns:1fr;
-}
+    .grid{
+        grid-template-columns:1fr;
+    }
 
-.calculator{
-padding:20px;
-}
+    .cards{
+        grid-template-columns:1fr;
+    }
 
+    .calculator{
+        padding:20px;
+    }
 }
 </style>
 </head>
@@ -293,7 +281,7 @@ padding:20px;
 <header>
 
 <div class="logo">
-AI <span>AUTO</span>
+AFD <span>AutoBaholash AI</span>
 </div>
 
 <nav>
@@ -308,7 +296,7 @@ AI <span>AUTO</span>
 <section class="hero">
 
 <div class="badge">
-🤖 AI AUTO
+🤖 AFD AUTOBAHOLASH AI
 </div>
 
 <h1>
@@ -319,7 +307,7 @@ O‘zbekistonda avtomobilingizning
 <p>
 Marka, model, ishlab chiqarilgan yil, probeg,
 korobka, yoqilg‘i va hududni hisobga olgan holda
-avtomobil qiymatini baholash.
+avtomobilning taxminiy bozor qiymatini aniqlang.
 </p>
 
 
@@ -331,121 +319,74 @@ avtomobil qiymatini baholash.
 
 
 <div class="field">
-
 <label>Avtomobil markasi</label>
 
-<select id="brand" onchange="loadModels()">
-
-<option value="">
-Markani tanlang
-</option>
-
-<option>Chevrolet</option>
-<option>BYD</option>
-<option>Kia</option>
-<option>Hyundai</option>
-<option>Toyota</option>
-<option>Mercedes-Benz</option>
-<option>BMW</option>
-<option>Chery</option>
-<option>Haval</option>
-<option>Geely</option>
-<option>Changan</option>
-<option>Volkswagen</option>
-<option>Lexus</option>
-<option>Jetour</option>
-<option>JAC</option>
-
+<select id="brand">
+<option value="">Markani tanlang</option>
 </select>
-
 </div>
 
 
 <div class="field">
-
 <label>Model</label>
 
-<select id="model">
-
-<option value="">
-Avval markani tanlang
-</option>
-
+<select id="model" disabled>
+<option value="">Avval markani tanlang</option>
 </select>
-
 </div>
 
 
 <div class="field">
-
 <label>Ishlab chiqarilgan yil</label>
 
 <select id="year">
-
-<option value="">
-Yilni tanlang
-</option>
-
+<option value="">Yilni tanlang</option>
 </select>
-
 </div>
 
 
 <div class="field">
-
 <label>Probeg, km</label>
 
 <input
 id="mileage"
 type="number"
 min="0"
-placeholder="Masalan: 85000"
->
-
+placeholder="Masalan: 85000">
 </div>
 
 
 <div class="field">
-
 <label>Korobka</label>
 
 <select id="gear">
-
 <option value="">Korobkani tanlang</option>
 <option>Avtomat</option>
 <option>Mexanika</option>
 <option>Robot</option>
 <option>Variator</option>
-
 </select>
-
 </div>
 
 
 <div class="field">
-
 <label>Yoqilg‘i</label>
 
 <select id="fuel">
-
 <option value="">Yoqilg‘ini tanlang</option>
 <option>Benzin</option>
 <option>Gaz</option>
 <option>Dizel</option>
 <option>Gibrid</option>
 <option>Elektr</option>
-
 </select>
-
 </div>
 
 
 <div class="field">
-
 <label>Hudud</label>
 
 <select id="region">
-
 <option value="">Hududni tanlang</option>
 <option>Toshkent shahri</option>
 <option>Toshkent viloyati</option>
@@ -461,25 +402,21 @@ placeholder="Masalan: 85000"
 <option>Jizzax</option>
 <option>Sirdaryo</option>
 <option>Qoraqalpog‘iston</option>
-
 </select>
-
 </div>
 
 </div>
 
 
-<button class="main-button" onclick="calculatePrice()">
-
+<button class="main-button" id="calculateBtn">
 🔍 AVTOMOBIL NARXINI BAHOLASH
-
 </button>
 
 
 <div class="result" id="result">
 
 <div class="result-title">
-AI AUTO hisoblagan taxminiy bozor qiymati
+AFD AutoBaholash AI taxminiy bozor qiymati
 </div>
 
 <div class="price" id="price">
@@ -488,10 +425,9 @@ AI AUTO hisoblagan taxminiy bozor qiymati
 
 <div class="range" id="range"></div>
 
-<div class="warning">
-⚠️ Ushbu versiya demo hisoblash algoritmidan foydalanadi.
-Real bozor e’lonlari bazasi ulanmaguncha natija rasmiy baholash
-yoki aniq sotuv narxi hisoblanmaydi.
+<div class="note">
+⚠️ Natija taxminiy hisoblanadi. Real bozor bahosi avtomobil
+holati, komplektatsiyasi, probegi va amaldagi e’lonlar asosida farq qilishi mumkin.
 </div>
 
 </div>
@@ -503,54 +439,37 @@ yoki aniq sotuv narxi hisoblanmaydi.
 
 <section class="section" id="imkoniyatlar">
 
-<h2>
-AI AUTO nima qiladi?
-</h2>
+<h2>AFD AutoBaholash AI imkoniyatlari</h2>
 
 <p class="section-desc">
-
-AI AUTO kelajakda O‘zbekiston avtomobil bozoridagi
-ruxsat etilgan ma’lumot manbalarini tahlil qilib,
-avtomobilning bozor qiymatini aniqlashga yordam beradi.
-
+O‘zbekiston avtomobil bozoridagi turli marka va modellarni
+baholash uchun mo‘ljallangan zamonaviy platforma.
 </p>
-
 
 <div class="cards">
 
 <div class="card">
-
-<h3>🚘 Keng avtomobil katalogi</h3>
-
+<h3>🚘 Katta avtomobil katalogi</h3>
 <p>
-2000–2026 yillarda ishlab chiqarilgan turli marka,
-model va komplektatsiyalarni katalogga qo‘shish imkoniyati.
+Chevrolet, BYD, Kia, Hyundai, Toyota, Mercedes-Benz,
+BMW, Chery, Haval, Geely va boshqa ko‘plab markalar.
 </p>
-
 </div>
 
-
 <div class="card">
-
-<h3>📊 Bozor tahlili</h3>
-
+<h3>📅 2000–2026 yillar</h3>
 <p>
-Kelajakda ruxsat etilgan e’lon ma’lumotlari asosida
-o‘rtacha, median va narx diapazonini hisoblash.
+Avtomobil ishlab chiqarilgan yilni 2000-yildan
+2026-yilgacha tanlash imkoniyati.
 </p>
-
 </div>
 
-
 <div class="card">
-
-<h3>🤖 AI baholash</h3>
-
+<h3>📊 Bozor baholash</h3>
 <p>
-Avtomobil yili, probegi, hududi va boshqa
-ko‘rsatkichlarini hisobga olgan holda baholash.
+Kelajakda ruxsat etilgan bozor ma’lumotlari va
+e’lonlar asosida yanada aniqroq baholash tizimi.
 </p>
-
 </div>
 
 </div>
@@ -559,44 +478,21 @@ ko‘rsatkichlarini hisobga olgan holda baholash.
 
 
 <section class="section" id="brendlar">
-
-<h2>
-O‘zbekistonda mashhur avtomobil markalari
-</h2>
+<h2>O‘zbekistonda mashhur avtomobil markalari</h2>
 
 <p class="section-desc">
 Chevrolet, BYD, Kia, Hyundai, Toyota, Mercedes-Benz,
-BMW, Chery, Haval, Geely va boshqa avtomobillar.
-
+BMW, Chery, Haval, Geely, Changan va boshqa markalar.
 </p>
 
-
-<div class="brands">
-
-<div class="brand">Chevrolet</div>
-<div class="brand">BYD</div>
-<div class="brand">Kia</div>
-<div class="brand">Hyundai</div>
-<div class="brand">Toyota</div>
-<div class="brand">Mercedes-Benz</div>
-<div class="brand">BMW</div>
-<div class="brand">Chery</div>
-<div class="brand">Haval</div>
-<div class="brand">Geely</div>
-<div class="brand">Changan</div>
-<div class="brand">Volkswagen</div>
-<div class="brand">Lexus</div>
-<div class="brand">Jetour</div>
-<div class="brand">JAC</div>
-
-</div>
+<div class="brands" id="brandList"></div>
 
 </section>
 
 
 <footer>
 
-<strong>AI AUTO</strong>
+<strong>AFD AutoBaholash AI</strong>
 
 <br>
 
@@ -604,231 +500,477 @@ O‘zbekiston avtomobil bozorida avtomobil narxini baholash platformasi.
 
 <br>
 
-© 2026 AI AUTO
+© 2026 AFD AutoBaholash AI
 
 </footer>
 
 
 <script>
 
+/* =====================================================
+   AFD AUTOBAHOLASH AI
+   AVTOMOBIL MARKA VA MODELLAR BAZASI
+===================================================== */
+
 const cars = {
 
-Chevrolet:[
-"Tico","Matiz","Damas","Labo",
-"Nexia 1","Nexia 2","Nexia 3",
-"Spark","Lacetti","Gentra","Cobalt",
-"Malibu","Malibu 2","Captiva",
-"Onix","Tracker","Equinox","Traverse"
+"Chevrolet":[
+"Tico",
+"Matiz",
+"Damas",
+"Labo",
+"Nexia 1",
+"Nexia 2",
+"Nexia 3",
+"Spark",
+"Lacetti",
+"Gentra",
+"Cobalt",
+"Malibu",
+"Malibu 2",
+"Captiva",
+"Onix",
+"Tracker",
+"Equinox",
+"Traverse",
+"Trailblazer"
 ],
 
-BYD:[
-"Chazor","Yuan Up","Song Plus",
-"Song Plus Champion","Seagull",
-"Dolphin","Qin Plus","Han","Tang",
-"Destroyer 05"
+"BYD":[
+"Chazor",
+"Yuan Up",
+"Song Plus",
+"Song Plus Champion",
+"Seagull",
+"Dolphin",
+"Qin Plus",
+"Qin L",
+"Han",
+"Tang",
+"Destroyer 05",
+"Song L",
+"Frigate 07"
 ],
 
-Kia:[
-"Seltos","K5","Sportage","Sorento",
-"Carnival","K3","K8","Rio","Picanto"
+"Kia":[
+"Morning",
+"Picanto",
+"Rio",
+"K3",
+"Forte",
+"Seltos",
+"Sonet",
+"K5",
+"K8",
+"Sportage",
+"Sorento",
+"Carnival",
+"Telluride",
+"EV6",
+"EV9"
 ],
 
-Hyundai:[
-"Accent","Elantra","Sonata","Tucson",
-"Santa Fe","Creta","Staria","Palisade"
+"Hyundai":[
+"Accent",
+"Elantra",
+"Sonata",
+"Avante",
+"Tucson",
+"Santa Fe",
+"Creta",
+"Venue",
+"Staria",
+"Palisade",
+"Ioniq 5",
+"Ioniq 6"
 ],
 
-Toyota:[
-"Camry","Corolla","RAV4",
-"Land Cruiser 100","Land Cruiser 200",
-"Land Cruiser 300","Prado",
-"Highlander","Prius"
+"Toyota":[
+"Camry",
+"Corolla",
+"RAV4",
+"Prado",
+"Land Cruiser 100",
+"Land Cruiser 200",
+"Land Cruiser 300",
+"Highlander",
+"Fortuner",
+"Prius",
+"Avalon",
+"C-HR",
+"Yaris"
 ],
 
 "Mercedes-Benz":[
-"C-Class","E-Class","S-Class",
-"GLA","GLC","GLE","GLS",
-"Vito","Sprinter"
+"A-Class",
+"C-Class",
+"E-Class",
+"S-Class",
+"CLA",
+"GLA",
+"GLB",
+"GLC",
+"GLE",
+"GLS",
+"V-Class",
+"Vito",
+"Sprinter",
+"Maybach S-Class"
 ],
 
-BMW:[
-"3 Series","5 Series","7 Series",
-"X1","X3","X5","X6","X7"
+"BMW":[
+"1 Series",
+"2 Series",
+"3 Series",
+"4 Series",
+"5 Series",
+"6 Series",
+"7 Series",
+"X1",
+"X2",
+"X3",
+"X4",
+"X5",
+"X6",
+"X7",
+"iX",
+"i4",
+"i5",
+"i7"
 ],
 
-Chery:[
-"Tiggo 2","Tiggo 4","Tiggo 7",
-"Tiggo 8","Tiggo 8 Pro","Arrizo 6"
+"Chery":[
+"Tiggo 2",
+"Tiggo 4",
+"Tiggo 7",
+"Tiggo 7 Pro",
+"Tiggo 8",
+"Tiggo 8 Pro",
+"Tiggo 8 Pro Max",
+"Arrizo 5",
+"Arrizo 6",
+"Arrizo 8"
 ],
 
-Haval:[
-"Jolion","F7","F7x","H6","H9","Dargo"
+"Haval":[
+"Jolion",
+"F7",
+"F7x",
+"H5",
+"H6",
+"H9",
+"Dargo",
+"M6",
+"Big Dog"
 ],
 
-Geely:[
-"Coolray","Emgrand","Atlas",
-"Monjaro","Okavango"
+"Geely":[
+"Coolray",
+"Emgrand",
+"Atlas",
+"Atlas Pro",
+"Monjaro",
+"Okavango",
+"Geometry C"
 ],
 
-Changan:[
-"CS35","CS55","CS75","CS85",
-"UNI-T","UNI-K"
+"Changan":[
+"Alsvin",
+"CS35",
+"CS35 Plus",
+"CS55",
+"CS55 Plus",
+"CS75",
+"CS75 Plus",
+"CS85",
+"CS95",
+"UNI-T",
+"UNI-K",
+"UNI-V"
 ],
 
-Volkswagen:[
-"Golf","Passat","Jetta",
-"Tiguan","Teramont","ID.4"
+"Volkswagen":[
+"Golf",
+"Passat",
+"Jetta",
+"Polo",
+"Tiguan",
+"Teramont",
+"Atlas",
+"Taos",
+"ID.4",
+"ID.6"
 ],
 
-Lexus:[
-"ES","GS","LS","RX","GX","LX"
+"Lexus":[
+"IS",
+"ES",
+"GS",
+"LS",
+"UX",
+"NX",
+"RX",
+"GX",
+"LX",
+"LM"
 ],
 
-Jetour:[
-"X70","X70 Plus","X90","Dashing"
+"Jetour":[
+"X50",
+"X70",
+"X70 Plus",
+"X90",
+"X90 Plus",
+"Dashing",
+"X70 Pro"
 ],
 
-JAC:[
-"S3","S4","JS4","J7"
+"JAC":[
+"S3",
+"S4",
+"JS4",
+"J7",
+"JS6",
+"JS8"
+],
+
+"BYD":[
+"Chazor",
+"Yuan Up",
+"Song Plus",
+"Song Plus Champion",
+"Seagull",
+"Dolphin",
+"Qin Plus",
+"Qin L",
+"Han",
+"Tang",
+"Destroyer 05",
+"Song L"
+],
+
+"MG":[
+"MG 3",
+"MG 5",
+"MG 6",
+"MG ZS",
+"MG HS",
+"MG RX5",
+"MG GT"
+],
+
+"Ford":[
+"Focus",
+"Fusion",
+"Mondeo",
+"Mustang",
+"Explorer",
+"Escape",
+"Kuga",
+"Edge",
+"F-150"
+],
+
+"Nissan":[
+"Almera",
+"Sentra",
+"Altima",
+"Teana",
+"Qashqai",
+"X-Trail",
+"Patrol",
+"Murano",
+"Juke"
+],
+
+"Honda":[
+"Civic",
+"Accord",
+"CR-V",
+"HR-V",
+"Pilot",
+"Fit",
+"City"
+],
+
+"Mitsubishi":[
+"Lancer",
+"ASX",
+"Outlander",
+"Pajero",
+"Pajero Sport",
+"L200",
+"Eclipse Cross"
+],
+
+"Subaru":[
+"Impreza",
+"Legacy",
+"Forester",
+"Outback",
+"XV",
+"WRX"
+],
+
+"Renault":[
+"Logan",
+"Duster",
+"Sandero",
+"Arkana",
+"Kaptur",
+"Master"
+],
+
+"Daewoo":[
+"Tico",
+"Matiz",
+"Nexia",
+"Damas",
+"Espero"
+],
+
+"Ravon":[
+"R2",
+"R3",
+"R4",
+"Gentra"
+],
+
+"Tesla":[
+"Model 3",
+"Model S",
+"Model X",
+"Model Y"
 ]
 
 };
 
 
-function loadModels(){
+/* =====================================================
+   ELEMENTLAR
+===================================================== */
 
-const brand =
-document.getElementById("brand");
+const brandSelect = document.getElementById("brand");
+const modelSelect = document.getElementById("model");
+const yearSelect = document.getElementById("year");
+const calculateBtn = document.getElementById("calculateBtn");
 
-const model =
-document.getElementById("model");
 
-model.innerHTML =
-'<option value="">Modelni tanlang</option>';
+/* =====================================================
+   MARKALARNI CHIQARISH
+===================================================== */
 
-const list =
-cars[brand.value] || [];
+Object.keys(cars)
+.sort()
+.forEach(function(brand){
 
-list.forEach(function(item){
+    const option = document.createElement("option");
+option.value = brand;
+    option.textContent = brand;
 
-const option =
-document.createElement("option");
-
-option.value=item;
-option.textContent=item;
-
-model.appendChild(option);
+    brandSelect.appendChild(option);
 
 });
 
-}
+
+/* =====================================================
+   MODELNI MARKAGA QARAB CHIQARISH
+===================================================== */
+
+brandSelect.addEventListener("change", function(){
+
+    const brand = this.value;
+
+    modelSelect.innerHTML =
+    '<option value="">Modelni tanlang</option>';
+
+    modelSelect.disabled = true;
+
+    if(!brand || !cars[brand]){
+        return;
+    }
+
+    cars[brand].forEach(function(model){
+
+        const option = document.createElement("option");
+
+        option.value = model;
+        option.textContent = model;
+
+        modelSelect.appendChild(option);
+
+    });
+
+    modelSelect.disabled = false;
+
+});
 
 
-function loadYears(){
+/* =====================================================
+   2000–2026 YILLAR
+===================================================== */
 
-const year =
-document.getElementById("year");
+for(let year = 2026; year >= 2000; year--){
 
-year.innerHTML =
-'<option value="">Yilni tanlang</option>';
+    const option = document.createElement("option");
 
-for(let y=2026;y>=2000;y--){
+    option.value = year;
+    option.textContent = year + "-yil";
 
-const option =
-document.createElement("option");
-
-option.value=y;
-option.textContent=y+"-yil";
-
-year.appendChild(option);
-
-}
-
-}
-
-
-function calculatePrice(){
-
-const brand =
-document.getElementById("brand").value;
-
-const model =
-document.getElementById("model").value;
-
-const year =
-Number(document.getElementById("year").value);
-
-const mileage =
-Number(document.getElementById("mileage").value) || 0;
-
-
-if(!brand){
-
-alert("Markani tanlang.");
-
-return;
-
-}
-
-if(!model){
-
-alert("Modelni tanlang.");
-
-return;
-
-}
-
-if(!year){
-
-alert("Ishlab chiqarilgan yilni tanlang.");
-
-return;
+    yearSelect.appendChild(option);
 
 }
 
 
-/*
-DEMO HISOBLASH.
+/* =====================================================
+   BRAND KARTALARI
+===================================================== */
 
-Keyinchalik bu joyga server/API orqali
-real bozor ma'lumotlari ulanadi.
-*/
+const brandList = document.getElementById("brandList");
+
+Object.keys(cars)
+.sort()
+.forEach(function(brand){
+
+    const div = document.createElement("div");
+
+    div.className = "brand";
+
+    div.textContent = brand;
+
+    brandList.appendChild(div);
+
+});
 
 
-let base=100000000;
+/* =====================================================
+   NARX BAZASI
+===================================================== */
 
-
-if(brand==="Chevrolet"){
-
-const prices={
+const basePrices = {
 
 "Tico":30000000,
 "Matiz":45000000,
 "Damas":95000000,
 "Labo":90000000,
+
 "Nexia 1":45000000,
 "Nexia 2":65000000,
 "Nexia 3":85000000,
+
 "Spark":75000000,
 "Lacetti":95000000,
 "Gentra":110000000,
+
 "Cobalt":145000000,
 "Malibu":250000000,
 "Malibu 2":300000000,
 "Captiva":220000000,
+
 "Onix":165000000,
-"Tracker":220000000
-
-};
-
-base=prices[model] || 120000000;
-
-}
-
-
-if(brand==="BYD"){
-
-const prices={
+"Tracker":220000000,
+"Equinox":300000000,
+"Traverse":400000000,
 
 "Chazor":220000000,
 "Yuan Up":210000000,
@@ -837,116 +979,261 @@ const prices={
 "Seagull":170000000,
 "Dolphin":190000000,
 "Qin Plus":230000000,
+"Qin L":250000000,
 "Han":500000000,
 "Tang":500000000,
-"Destroyer 05":230000000
+"Destroyer 05":230000000,
+"Song L":350000000,
+
+"Seltos":270000000,
+"K5":320000000,
+"Sportage":350000000,
+"Sorento":450000000,
+"Carnival":500000000,
+
+"Elantra":250000000,
+"Sonata":300000000,
+"Tucson":350000000,
+"Santa Fe":450000000,
+"Creta":260000000,
+
+"Camry":400000000,
+"Corolla":250000000,
+"RAV4":400000000,
+"Prado":650000000,
+"Land Cruiser 200":900000000,
+"Land Cruiser 300":1500000000,
+
+"C-Class":450000000,
+"E-Class":600000000,
+"S-Class":1000000000,
+"GLC":650000000,
+"GLE":850000000,
+"GLS":1100000000,
+
+"3 Series":450000000,
+"5 Series":600000000,
+"7 Series":900000000,
+"X3":550000000,
+"X5":750000000,
+"X7":1000000000,
+
+"Tiggo 7":250000000,
+"Tiggo 7 Pro":300000000,
+"Tiggo 8":350000000,
+"Tiggo 8 Pro":400000000,
+
+"Jolion":260000000,
+"H6":320000000,
+"H9":550000000,
+"Dargo":400000000,
+
+"Coolray":250000000,
+"Atlas":350000000,
+"Monjaro":450000000,
+
+"CS35":220000000,
+"CS55":270000000,
+"CS75":330000000,
+"UNI-T":350000000,
+"UNI-K":450000000,
+
+"Golf":250000000,
+"Passat":300000000,
+"Tiguan":400000000,
+"Teramont":600000000,
+
+"ES":500000000,
+"RX":650000000,
+"GX":800000000,
+"LX":1400000000,
+
+"X70":260000000,
+"X70 Plus":300000000,
+"Dashing":330000000,
+
+"S3":180000000,
+"S4":200000000,
+"J7":230000000,
+
+"MG 5":220000000,
+"MG ZS":250000000,
+"MG HS":320000000,
+
+"Focus":180000000,
+"Fusion":220000000,
+"Mustang":650000000,
+"Explorer":550000000,
+
+"Altima":300000000,
+"X-Trail":350000000,
+"Patrol":850000000,
+
+"Civic":300000000,
+"Accord":350000000,
+"CR-V":400000000,
+
+"Lancer":150000000,
+"Outlander":300000000,
+"Pajero":400000000,
+
+"Duster":230000000,
+"Logan":150000000,
+
+"Model 3":450000000,
+"Model S":800000000,
+"Model X":900000000,
+"Model Y":550000000
 
 };
 
-base=prices[model] || 230000000;
 
-}
+/* =====================================================
+   NARXNI HISOBLASH
+===================================================== */
 
+calculateBtn.addEventListener("click", function(){
+ const brand = brandSelect.value;
+    const model = modelSelect.value;
+    const year = Number(yearSelect.value);
+    const mileage = Number(
+        document.getElementById("mileage").value
+    ) || 0;
 
-if(brand==="Kia")
-base=260000000;
+    const gear =
+        document.getElementById("gear").value;
 
-if(brand==="Hyundai")
-base=230000000;
+    const fuel =
+        document.getElementById("fuel").value;
 
-if(brand==="Toyota")
-base=300000000;
-[05.08.2026 17:34] Abdugafforov.N: if(brand==="Mercedes-Benz")
-base=350000000;
-
-if(brand==="BMW")
-base=350000000;
-
-if(brand==="Chery")
-base=220000000;
-
-if(brand==="Haval")
-base=250000000;
-
-if(brand==="Geely")
-base=220000000;
-
-if(brand==="Changan")
-base=220000000;
-
-if(brand==="Volkswagen")
-base=230000000;
-
-if(brand==="Lexus")
-base=400000000;
-
-if(brand==="Jetour")
-base=230000000;
-
-if(brand==="JAC")
-base=180000000;
+    const region =
+        document.getElementById("region").value;
 
 
-/* YIL */
+    if(!brand){
+        alert("Avtomobil markasini tanlang.");
+        return;
+    }
 
-const age=2026-year;
+    if(!model){
+        alert("Avtomobil modelini tanlang.");
+        return;
+    }
 
-base-=age*4000000;
-
-
-/* PROBEG */
-
-if(mileage>150000)
-base-=25000000;
-
-else if(mileage>100000)
-base-=18000000;
-
-else if(mileage>50000)
-base-=10000000;
-
-else if(mileage>30000)
-base-=5000000;
+    if(!year){
+        alert("Ishlab chiqarilgan yilni tanlang.");
+        return;
+    }
 
 
-if(base<15000000)
-base=15000000;
+    let base =
+        basePrices[model] || 200000000;
 
 
-const min=
-Math.round(base*0.95);
+    /* YIL TA'SIRI */
 
-const max=
-Math.round(base*1.05);
+    const age = 2026 - year;
 
+    if(age > 0){
 
-document.getElementById("price")
-.textContent=
-base.toLocaleString("uz-UZ")+" so‘m";
+        base -= age * 4000000;
 
-
-document.getElementById("range")
-.textContent=
-"Taxminiy diapazon: "+
-min.toLocaleString("uz-UZ")+
-" – "+
-max.toLocaleString("uz-UZ")+" so‘m";
+    }
 
 
-document.getElementById("result")
-.style.display="block";
+    /* PROBEG TA'SIRI */
 
-}
+    if(mileage > 200000){
+
+        base -= 35000000;
+
+    }
+    else if(mileage > 150000){
+
+        base -= 25000000;
+
+    }
+    else if(mileage > 100000){
+
+        base -= 18000000;
+
+    }
+    else if(mileage > 50000){
+
+        base -= 10000000;
+
+    }
+    else if(mileage > 30000){
+
+        base -= 5000000;
+
+    }
 
 
-document.addEventListener(
-"DOMContentLoaded",
-function(){
+    /* KOROBKA */
 
-loadYears();
+    if(gear === "Avtomat"){
+        base += 5000000;
+    }
 
-}
-);
+    if(gear === "Robot"){
+        base += 3000000;
+    }
+
+
+    /* YOQILGI */
+
+    if(fuel === "Gibrid"){
+        base += 15000000;
+    }
+
+    if(fuel === "Elektr"){
+        base += 20000000;
+    }
+
+
+    /* HUDUD */
+
+    if(region === "Toshkent shahri"){
+        base += 5000000;
+    }
+
+
+    if(base < 15000000){
+        base = 15000000;
+    }
+
+
+    const min =
+        Math.round(base * 0.93);
+
+    const max =
+        Math.round(base * 1.07);
+
+
+    document.getElementById("price").textContent =
+        base.toLocaleString("uz-UZ") + " so‘m";
+
+
+    document.getElementById("range").textContent =
+        "Taxminiy bozor diapazoni: " +
+        min.toLocaleString("uz-UZ") +
+        " – " +
+        max.toLocaleString("uz-UZ") +
+        " so‘m";
+
+
+    document.getElementById("result").style.display =
+        "block";
+
+
+    document.getElementById("result")
+        .scrollIntoView({
+            behavior:"smooth",
+            block:"center"
+        });
+
+});
 
 </script>
 
